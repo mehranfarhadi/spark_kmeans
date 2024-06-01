@@ -7,7 +7,7 @@ from pyspark.ml.feature import VectorAssembler
 spark = SparkSession.builder.appName("KMeansClustering").getOrCreate()
 
 # Load data
-data = spark.read.csv("path_to_your_data.csv", header=True, inferSchema=True)
+data = spark.read.csv("data.csv", header=True, inferSchema=True)
 
 # Assemble features into a vector
 assembler = VectorAssembler(inputCols=data.columns, outputCol="features")
