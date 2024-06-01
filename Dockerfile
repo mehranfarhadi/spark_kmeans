@@ -10,8 +10,8 @@ COPY --from=py3 / /
 # Set environment variable for the PySpark version
 ARG PYSPARK_VERSION=3.2.0
 
-# Install PySpark
-RUN pip --no-cache-dir install pyspark==${PYSPARK_VERSION}
+# Install PySpark and numpy
+RUN pip --no-cache-dir install pyspark==${PYSPARK_VERSION} numpy
 
 # Copy the Python script into the Docker image
 COPY kmeans_clustering.py /opt/kmeans_clustering.py
