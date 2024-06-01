@@ -16,6 +16,9 @@ RUN pip --no-cache-dir install pyspark==${PYSPARK_VERSION} numpy
 # Copy the Python script into the Docker image
 COPY kmeans_clustering.py /opt/kmeans_clustering.py
 
+# Copy the CSV data file into the Docker image
+COPY data.csv /opt/data.csv
+
 # Set the working directory
 WORKDIR /opt
 
